@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CSS Animation Playground</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Playfair+Display:wght@700;900&family=IM+Fell+English&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <h1>✦ CSS Animation Playground</h1>
+  <span class="badge">JS DOM PROJECT</span>
+</header>
+
+<div class="app">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar-left">
+
+    <p class="section-title">Animations</p>
+    <div class="preset-grid" id="presetGrid">
+      <!-- injected by JS -->
+    </div>
+
+    <hr class="divider"/>
+
+    <p class="section-title">Shape</p>
+    <div class="shape-row" id="shapeRow">
+      <button class="shape-btn active" data-shape="square" title="Square">▪</button>
+      <button class="shape-btn" data-shape="circle" title="Circle">●</button>
+      <button class="shape-btn" data-shape="triangle" title="Triangle">▲</button>
+      <button class="shape-btn" data-shape="star" title="Star">★</button>
+    </div>
+
+    <hr class="divider"/>
+
+    <p class="section-title">Color</p>
+    <div class="swatch-row" id="swatchRow">
+      <!-- injected by JS -->
+    </div>
+
+  </aside>
+
+  <!-- MAIN CANVAS -->
+  <main class="canvas-area">
+    <div class="stage">
+      <span class="anim-label" id="animLabel">SELECT AN ANIMATION</span>
+      <div id="shape" style="--dur:1s;"></div>
+    </div>
+    <div class="controls-bar">
+      <button class="ctrl-btn" id="pauseBtn">⏸ Pause</button>
+      <button class="ctrl-btn danger" id="resetBtn">↺ Reset</button>
+    </div>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar-right">
+
+    <p class="section-title">Speed</p>
+    <div class="control-group">
+      <div class="control-label">Duration <span id="durVal">1.0s</span></div>
+      <input type="range" id="durSlider" min="0.2" max="4" step="0.1" value="1"/>
+    </div>
+
+    <p class="section-title">Size</p>
+    <div class="control-group">
+      <div class="control-label">Scale <span id="sizeVal">100px</span></div>
+      <input type="range" id="sizeSlider" min="40" max="180" step="5" value="100"/>
+    </div>
+
+    <p class="section-title">Timing Function</p>
+    <div class="control-group">
+      <select id="easingSelect">
+        <option value="linear">linear</option>
+        <option value="ease" selected>ease</option>
+        <option value="ease-in">ease-in</option>
+        <option value="ease-out">ease-out</option>
+        <option value="ease-in-out">ease-in-out</option>
+        <option value="cubic-bezier(.68,-0.55,.27,1.55)">spring</option>
+        <option value="steps(8, end)">steps(8)</option>
+      </select>
+    </div>
+
+    <p class="section-title">Direction</p>
+    <div class="control-group">
+      <select id="directionSelect">
+        <option value="normal">normal</option>
+        <option value="reverse">reverse</option>
+        <option value="alternate">alternate</option>
+        <option value="alternate-reverse">alternate-reverse</option>
+      </select>
+    </div>
+
+    <hr class="divider"/>
+
+    <p class="section-title">Generated CSS</p>
+    <div class="css-output" id="cssOutput">/* pick an animation */</div>
+    <button class="copy-btn" id="copyBtn">⎘ COPY CSS</button>
+
+  </aside>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">✓ Copied to clipboard!</div>
+
+<script src="script.js"></script>
+</body>
+</html>
