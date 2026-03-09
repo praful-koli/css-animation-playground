@@ -142,14 +142,7 @@ header h1 {
   overflow: hidden;
 }
 
-/* dot grid */
-.canvas-area::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle, #c4b89a 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.5;
-}
+
 
 .stage {
   position: relative; z-index: 1;
